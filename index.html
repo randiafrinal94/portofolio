@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integration Architect Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <div class="logo">&lt;DevIntegration /&gt;</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#stack">The Stack</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="about" class="hero section">
+        <div class="container">
+            <h3 class="fade-in delay-1">Hi, I am Randi Afrinal.</h3>
+            <h1 class="fade-in delay-2">Bridging Complex Systems.</h1>
+            <p class="fade-in delay-3">
+                I am a Senior Backend Integration Architect specializing in unifying
+                <span class="highlight">.NET Microservices</span> and <span class="highlight">Java Enterprise</span>
+                environments through robust <span class="highlight">webMethods ESB</span> backbones.
+            </p>
+            <a href="#experience" class="btn fade-in delay-4">View Architecture</a>
+        </div>
+    </section>
+
+    <!-- The Stack Section -->
+    <section id="stack" class="section">
+        <div class="container">
+            <h2 class="fade-in">The Technology Stack</h2>
+            <div class="cards-grid" id="stack-grid">
+                <!-- Stack content rendered via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="fade-in">Professional Roadmap</h2>
+            <div class="timeline" id="timeline-container">
+                <!-- Experience content rendered via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" style="text-align: center;">
+        <div class="container fade-in">
+            <h2>Get In Touch</h2>
+            <p style="max-width: 500px; margin: 0 auto 40px; color: var(--slate);">
+                Whether you have a question about ESB patterns or just want to say hi, my inbox is always open.
+            </p>
+            <form class="contact-form" action="mailto:randiafrinal04@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <input type="text" name="name" class="form-input" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" class="form-input" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" class="form-input" rows="5" placeholder="Your Message" required
+                        style="resize: none;"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 20px; font-size: 12px; color: var(--light-slate);">
+        <p>Designed & Built by Senior Architect</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

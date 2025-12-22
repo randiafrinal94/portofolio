@@ -223,23 +223,27 @@ h4 {
     margin-bottom: 60px;
 }
 
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    left: -4px;
-    top: 5px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--cyan);
-}
+/* removed .timeline-item::after */
 
 .timeline-date {
     font-family: monospace;
     color: var(--cyan);
     font-size: 13px;
-    color: var(--light-slate);
+    position: relative;
+    /* Removed duplicate color property */
     transition: var(--transition);
+}
+
+.timeline-date::before {
+    content: '';
+    position: absolute;
+    left: -45px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--cyan);
 }
 
 .social-link:hover {

@@ -130,6 +130,7 @@ h4 {
 
 .nav-links a {
     font-size: 13px;
+    color: var(--white);
 }
 
 .nav-links a:hover {

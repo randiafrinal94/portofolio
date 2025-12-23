@@ -214,10 +214,29 @@ h4 {
     max-width: 40%;
 }
 
-.hero-image svg {
+.hero-image .image-wrapper {
+    position: relative;
+    max-width: 300px;
     width: 100%;
-    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+    transition: var(--transition);
+}
+
+.hero-image img {
+    width: 100%;
     height: auto;
+    border-radius: 10px;
+    border: 2px solid var(--cyan);
+    display: block;
+    filter: grayscale(100%) contrast(1.1);
+    /* Effect styling */
+    transition: var(--transition);
+}
+
+.hero-image:hover img {
+    filter: none;
+    transform: translateY(-5px);
 }
 
 @media (max-width: 768px) {

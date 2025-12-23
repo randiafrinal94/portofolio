@@ -199,6 +199,23 @@ h4 {
         max-width: 100%;
         margin-bottom: 30px;
     }
+
+    /* Navbar Mobiles */
+    .container {
+        padding: 0 16px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
 }
 
 .hero p {

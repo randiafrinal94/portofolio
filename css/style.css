@@ -158,6 +158,11 @@ h4 {
     margin-bottom: 20px;
 }
 
+.hero .container {
+    text-align: left;
+    width: 100%;
+}
+
 .hero p {
     max-width: 540px;
     font-size: 18px;
@@ -248,9 +253,7 @@ h4 {
 
 .social-link:hover {
     color: var(--cyan);
-    border-color: var(--cyan);
     transform: translateY(-3px);
-    box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
 }
 
 .social-link svg {
@@ -318,4 +321,102 @@ h4 {
 
 .delay-4 {
     transition-delay: 400ms;
+}
+
+/* Loader */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--navy);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+#loader-wrapper.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader {
+    position: relative;
+    width: 60px;
+    height: 60px;
+}
+
+.loader svg {
+    width: 100%;
+    height: 100%;
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.loader circle {
+    stroke: var(--cyan);
+    stroke-width: 4;
+    fill: none;
+    stroke-dasharray: 100, 200;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite;
+    stroke-linecap: round;
+}
+
+#test2 {
+    stroke: var(--light-slate);
+    animation-delay: -0.5s;
+    opacity: 0.3;
+}
+
+.loader-text {
+    margin-top: 20px;
+    font-family: var(--font-main);
+    color: var(--cyan);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+    }
+
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }

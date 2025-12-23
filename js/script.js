@@ -139,3 +139,15 @@ document.addEventListener('keydown', (e) => {
         e.preventDefault();
     }
 });
+
+// Loader Logic
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const loader = document.getElementById('loader-wrapper');
+        if (loader) {
+            loader.classList.add('loaded');
+            // Allow scrolling again if we blocked it (optional, but good practice if body was hidden)
+            document.body.style.overflow = 'auto'; // ensure scrolling is enabled
+        }
+    }, 2000); // Minimum 2 seconds loader
+});

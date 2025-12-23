@@ -172,5 +172,5 @@ window.addEventListener('load', () => {
             }
         });
 
-    }, 2000); // Minimum 2 seconds loader
+    }, 500); // Minimum 0.5 seconds loader
 });

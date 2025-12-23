@@ -185,7 +185,8 @@ h4 {
     margin-bottom: 20px;
 }
 
-.hero h3 {
+.hero h3,
+.intro-eyebrow {
     font-size: 16px;
     color: var(--cyan);
     font-weight: 400;

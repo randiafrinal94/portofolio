@@ -124,21 +124,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Disable Inspect Element
-document.addEventListener('contextmenu', (e) => e.preventDefault());
 
-document.addEventListener('keydown', (e) => {
-    // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
-    if (
-        e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) ||
-        (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) ||
-        (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) ||
-        (e.ctrlKey && (e.key === 'U' || e.key === 'u'))
-    ) {
-        e.preventDefault();
-    }
-});
 
 // Loader Logic
 window.addEventListener('load', () => {

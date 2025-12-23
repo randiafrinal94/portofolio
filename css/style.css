@@ -36,7 +36,6 @@
 
 .theme-btn:hover {
     color: var(--cyan);
-    transform: translateY(-2px);
 }
 
 /* Custom Scrollbar */

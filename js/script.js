@@ -155,26 +155,18 @@ window.addEventListener('load', () => {
         const sunIcon = document.querySelector('.sun-icon');
         const moonIcon = document.querySelector('.moon-icon');
 
-        // Check local storage for theme
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme) {
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            if (currentTheme === 'light') {
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'block';
-            }
-        }
+        // Default to Dark Mode (No localStorage check)
 
         themeToggleBtn.addEventListener('click', () => {
             let theme = document.documentElement.getAttribute('data-theme');
             if (theme === 'light') {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
+                // localStorage.setItem('theme', 'dark'); // Persistence removed
                 sunIcon.style.display = 'block';
                 moonIcon.style.display = 'none';
             } else {
                 document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
+                // localStorage.setItem('theme', 'light'); // Persistence removed
                 sunIcon.style.display = 'none';
                 moonIcon.style.display = 'block';
             }

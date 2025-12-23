@@ -124,23 +124,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Inspect Element Control
-const SHOW_INSPECT_TOGGLE = false; // Set to false to hide the toggle button
-let isInspectBlocked = localStorage.getItem('inspectBlocked') !== 'false'; // Default to true
-
-document.addEventListener('contextmenu', (e) => {
-    if (isInspectBlocked) e.preventDefault();
-});
+// Disable Inspect Element
+document.addEventListener('contextmenu', (e) => e.preventDefault());
 
 document.addEventListener('keydown', (e) => {
     // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
-    if (isInspectBlocked && (
+    if (
         e.key === 'F12' ||
         (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) ||
         (e.ctrlKey && e.shiftKey && (e.key === 'J' || e.key === 'j')) ||
         (e.ctrlKey && e.shiftKey && (e.key === 'C' || e.key === 'c')) ||
         (e.ctrlKey && (e.key === 'U' || e.key === 'u'))
-    )) {
+    ) {
         e.preventDefault();
     }
 });
@@ -177,36 +172,7 @@ window.addEventListener('load', () => {
             }
         });
 
-        // Inspect Toggle Logic
-        const inspectToggleBtn = document.getElementById('inspect-toggle');
-        const lockIcon = document.querySelector('.lock-icon');
-        const unlockIcon = document.querySelector('.unlock-icon');
 
-        // Function to update UI
-        const updateInspectUI = () => {
-            if (isInspectBlocked) {
-                lockIcon.style.display = 'block';
-                unlockIcon.style.display = 'none';
-            } else {
-                lockIcon.style.display = 'none';
-                unlockIcon.style.display = 'block';
-            }
-        };
-
-        // Initial UI Set
-        updateInspectUI();
-
-        if (inspectToggleBtn) {
-            if (!SHOW_INSPECT_TOGGLE) {
-                inspectToggleBtn.style.display = 'none';
-            }
-
-            inspectToggleBtn.addEventListener('click', () => {
-                isInspectBlocked = !isInspectBlocked;
-                localStorage.setItem('inspectBlocked', isInspectBlocked);
-                updateInspectUI();
-            });
-        }
 
     }, 500); // Minimum 0.5 seconds loader
 });

@@ -34,8 +34,13 @@
     transition: var(--transition);
 }
 
-.theme-btn:hover {
+.theme-btn:hover,
+.theme-btn:active,
+.theme-btn:focus {
     color: var(--cyan);
+    transform: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Custom Scrollbar */

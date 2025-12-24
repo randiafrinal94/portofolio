@@ -249,6 +249,7 @@
         .hero-image img {
             width: 100%;
             height: auto;
+            aspect-ratio: 1 / 1;
             border-radius: 10px;
             border: 2px solid var(--cyan);
             display: block;
@@ -628,8 +629,8 @@
                 <div class="image-wrapper">
                     <img src="assets/profil_optimized.jpg"
                         srcset="assets/profil_small.jpg 300w, assets/profil_mobile.jpg 520w, assets/profil_optimized.jpg 800w"
-                        sizes="(max-width: 600px) 300px, (max-width: 900px) 520px, 800px" alt="Randi Afrinal"
-                        fetchpriority="high" width="300" height="300">
+                        sizes="(max-width: 480px) 100vw, 300px" alt="Randi Afrinal" fetchpriority="high" width="300"
+                        height="300">
                 </div>
             </div>
         </div>

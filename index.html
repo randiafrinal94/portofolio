@@ -25,6 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -94,7 +95,8 @@
             </div>
             <div class="hero-image fade-in delay-3">
                 <div class="image-wrapper">
-                    <img src="assets/profil_optimized.jpg" alt="Randi Afrinal" loading="lazy">
+                    <img src="assets/profil_optimized.jpg" alt="Randi Afrinal" fetchpriority="high" width="300"
+                        height="300">
                 </div>
             </div>
         </div>
@@ -178,7 +180,7 @@
         </p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Moved to head with defer -->
 </body>
 
 </html>

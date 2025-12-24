@@ -128,37 +128,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Loader Logic
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        const loader = document.getElementById('loader-wrapper');
-        if (loader) {
-            loader.classList.add('loaded');
-            // Allow scrolling again if we blocked it (optional, but good practice if body was hidden)
-            document.body.style.overflow = 'auto'; // ensure scrolling is enabled
+    const loader = document.getElementById('loader-wrapper');
+    if (loader) {
+        loader.classList.add('loaded');
+        // Allow scrolling again if we blocked it (optional, but good practice if body was hidden)
+        document.body.style.overflow = 'auto'; // ensure scrolling is enabled
+    }
+
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const sunIcon = document.querySelector('.sun-icon');
+    const moonIcon = document.querySelector('.moon-icon');
+
+    // Default to Dark Mode (No localStorage check)
+
+    themeToggleBtn.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            // localStorage.setItem('theme', 'dark'); // Persistence removed
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            // localStorage.setItem('theme', 'light'); // Persistence removed
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
         }
-
-        // Theme Toggle Logic
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const sunIcon = document.querySelector('.sun-icon');
-        const moonIcon = document.querySelector('.moon-icon');
-
-        // Default to Dark Mode (No localStorage check)
-
-        themeToggleBtn.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            if (theme === 'light') {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                // localStorage.setItem('theme', 'dark'); // Persistence removed
-                sunIcon.style.display = 'block';
-                moonIcon.style.display = 'none';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                // localStorage.setItem('theme', 'light'); // Persistence removed
-                sunIcon.style.display = 'none';
-                moonIcon.style.display = 'block';
-            }
-        });
-
-
-
-    }, 500); // Minimum 0.5 seconds loader
+    });
 });

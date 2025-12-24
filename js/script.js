@@ -55,7 +55,7 @@ function renderStack() {
         card.className = `card fade-in ${delayClass}`;
         card.innerHTML = `
             <span class="card-icon">${item.icon}</span>
-            <h4>${item.title}</h4>
+            <h3>${item.title}</h3>
             <p>${item.desc}</p>
         `;
         container.appendChild(card);
